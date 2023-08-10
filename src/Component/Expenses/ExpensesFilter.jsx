@@ -5,7 +5,7 @@ const ExpensesFilter = (props) => {
 
     // DropDownChangeHandler will execute when the user change the filter and prop.onChangeFilter will take that value on Expenses.jsx
     const DropDownChangeHandler = (event) => {
-        console.log(event.target.value);
+        // console.log(event.target.value);
         props.onChangeFilter(event.target.value)
     };
 
