@@ -3,6 +3,7 @@ import Card from "../UI/Card";
 import ExpensesFilter from "./ExpensesFilter";
 import ExpenseList from './ExpenseList';
 import "./Expenses.css";
+import ExpenseChart from './ExpensesChart';
 
 const Expenses = (props) => {
 
@@ -53,6 +54,7 @@ const Expenses = (props) => {
             {/* To Fetch the data from the ExpensesFilter.jsx through the props.onChangeFilter */}
             <ExpensesFilter selectedYear={filteredYear} onChangeFilter={FilterChangeHandler} />
 
+            <ExpenseChart expenses={filteredExpense} />
             {/* Display the expenses array dinamically */}
 
             {/* This below code will pass the message if there is no expense respect to the selected Year through the filter */}

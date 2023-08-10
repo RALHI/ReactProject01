@@ -18,6 +18,7 @@ const NewExpense = (props) => {
     const saveExpenseDataHandler = (EnteredExpenseData) => {
         console.log(EnteredExpenseData);
         props.onAddExpense(EnteredExpenseData);
+        setEditing(false);
     };
 
     return (
