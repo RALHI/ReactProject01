@@ -3,10 +3,10 @@ import Expenses from "./Component/Expenses/Expenses";
 import NewExpense from "./Component/Form/NewExpense";
 
 const dummy_expenses = [
-  { id: 'e1', title: 'Car Insurance', amount: 200, date: new Date(2023, 8, 8), },
-  { id: 'e2', title: 'Bike Insurance', amount: 400, date: new Date(2023, 8, 9), },
-  { id: 'e3', title: 'Trucks Insurance', amount: 600, date: new Date(2023, 8, 10), },
-  { id: 'e4', title: 'Flight Insurance', amount: 800, date: new Date(2023, 8, 11), },
+  { id: 'e1', title: 'Car Insurance', amount: 200, date: new Date(2019, 8, 8), },
+  { id: 'e2', title: 'Bike Insurance', amount: 400, date: new Date(2019, 8, 9), },
+  { id: 'e3', title: 'Trucks Insurance', amount: 600, date: new Date(2020, 8, 10), },
+  { id: 'e4', title: 'Flight Insurance', amount: 800, date: new Date(2022, 8, 11), },
 ];
 
 
