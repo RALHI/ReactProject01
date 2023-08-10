@@ -22,23 +22,14 @@ const Expenses = (props) => {
     //     FilterInfo = '2019 , 2020 , 2021';
     // };
 
-    //Method:02 - Change the display content with the change in the Filter
-
-    // const [FilterInfo, setFilterInfo] = useState('2019 , 2021 , 2022');
-
     const FilterChangeHandler = (selectedYear) => {
         setFilteredYear(selectedYear);
-
-        // if (selectedYear === '2020') {
-        //     setFilterInfo('2019 , 2021 , 2022')
-        // } else if (selectedYear === '2019') {
-        //     setFilterInfo('2020 , 2021 , 2022')
-        // } else if (selectedYear === '2021') {
-        //     setFilterInfo('2019 , 2020 , 2022')
-        // } else {
-        //     setFilterInfo('2019 , 2020 , 2021')
-        // }
     };
+
+    //This code enable the filter option to select and change the expense list accordingly.
+    const filteredExpense = props.expenses.filter(expense => {
+        return expense.date.getFullYear().toString() === filteredYear;
+    });
 
     return (
         <Card className="expenses">
@@ -50,8 +41,9 @@ const Expenses = (props) => {
             <ExpensesFilter selectedYear={filteredYear} onChangeFilter={FilterChangeHandler} />
 
             {/* Display the expenses array dinamically */}
-            {props.expenses.map((expense) =>
+            {filteredExpense.map((expense) =>
                 <ExpenseItem
+                    key={expense.id}
                     title={expense.title}
                     amount={expense.amount}
                     date={expense.date}
