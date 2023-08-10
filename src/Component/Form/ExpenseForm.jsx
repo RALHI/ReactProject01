@@ -51,7 +51,7 @@ const ExpenseForm = (props) => {
             date: new Date(userInput.enteredDate)
         };
 
-        //this will execute the two way binding - through this code we can clear the input fields after submitting the form.
+        // through this code we can clear the input fields after submitting the form.
         setUserInput(() => {
             return {
                 enteredTitle: '',
@@ -84,6 +84,7 @@ const ExpenseForm = (props) => {
             </div>
 
             <div className='new-expense__actions'>
+                <button type='button' onClick={props.onCancelEditing}>Cancel Expense</button>
                 <button type='submit'>Add Expense</button>
             </div>
         </form>

@@ -83,6 +83,7 @@ const Expenses = (props) => {
             {/* Method 03 */}
             {/* {expenseContent} */}
 
+            {/* Method 04 */}
             <ExpenseList items={filteredExpense} />
 
             {/*Display all the static expenses which are available in the expense array which mention in App.js */}
