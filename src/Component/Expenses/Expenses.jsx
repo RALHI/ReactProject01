@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Card from "../UI/Card";
 import ExpensesFilter from "./ExpensesFilter";
-import ExpenseItem from "./ExpenseItem";
+import ExpenseList from './ExpenseList';
 import "./Expenses.css";
 
 const Expenses = (props) => {
@@ -31,6 +31,19 @@ const Expenses = (props) => {
         return expense.date.getFullYear().toString() === filteredYear;
     });
 
+    // let expenseContent = <p>No Expense Found</p>;
+
+    // if (filteredExpense.length > 0) {
+    //     expenseContent = filteredExpense.map((expense) => (
+    //         <ExpenseItem
+    //             key={expense.id}
+    //             title={expense.title}
+    //             amount={expense.amount}
+    //             date={expense.date}
+    //         />
+    //     ));
+    // }
+
     return (
         <Card className="expenses">
 
@@ -45,7 +58,7 @@ const Expenses = (props) => {
             {/* This below code will pass the message if there is no expense respect to the selected Year through the filter */}
 
             {/* Method 01 */}
-            {filteredExpense.length === 0 && <p>No Expense Found</p>}
+            {/* {filteredExpense.length === 0 && <p>No Expense Found</p>}
             {filteredExpense.length > 0 && filteredExpense.map((expense) =>
                 <ExpenseItem
                     key={expense.id}
@@ -53,7 +66,7 @@ const Expenses = (props) => {
                     amount={expense.amount}
                     date={expense.date}
                 />
-            )}
+            )} */}
 
             {/* Method 02 */}
             {/* {filteredExpense.length === 0 ? (<p>No Expense Found</p>) : (
@@ -66,6 +79,11 @@ const Expenses = (props) => {
                     />
                 )
             )} */}
+
+            {/* Method 03 */}
+            {/* {expenseContent} */}
+
+            <ExpenseList items={filteredExpense} />
 
             {/*Display all the static expenses which are available in the expense array which mention in App.js */}
             {/* <ExpenseItem expenses={props.expenses[0]} />
